@@ -64,4 +64,39 @@
             <artifactId>spring-core</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+          <!-- war name-->
+          <finalName>recommender</finalName>
+          <plugins>
+              <!-- source code version -->
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>3.1</version>
+                  <configuration>
+                      <source>7</source>
+                      <target>7</target>
+                  </configuration>
+              </plugin>
+              <!-- Servlet 3.0 allows no web.xml deployment descriptor -->
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <version>2.4</version>
+                  <configuration>
+                      <failOnMissingWebXml>false</failOnMissingWebXml>
+                  </configuration>
+              </plugin>
+              <!-- run project from command line with "mvn tomcat7:run" -->
+              <!-- <plugin>
+                  <groupId>org.apache.tomcat.maven</groupId>
+                  <artifactId>tomcat7-maven-plugin</artifactId>
+                  <version>2.2</version>
+                  <configuration>
+                    <path>/pa165</path>
+                  </configuration>
+              </plugin>     -->
+          </plugins>
+      </build>
 </project>
